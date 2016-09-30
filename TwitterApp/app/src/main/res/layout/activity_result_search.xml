@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.appbox.jose.twitterapp.Activities.ResultSearch">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_search"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"/>
+
+    <TextView
+        android:id="@+id/tv_result_search_activity_no_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="16dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/text_no_results"/>
+
+    <ProgressBar
+        android:id="@+id/progress_result_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="25dp"
+        android:visibility="visible" />
+
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/lv_tweet_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+    </ListView>
+</LinearLayout>

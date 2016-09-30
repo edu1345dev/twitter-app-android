@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">TwitterApp</string>
+    <string name="home_search">Search Tweets</string>
+    <string name="recent_search" translatable="false">recentSearch</string>
+    <string name="text_recent_search">Recent Searches</string>
+    <string name="text_delete_history">Delete History?</string>
+    <string name="text_confirmation">YES</string>
+    <string name="text_negation">NO</string>
+    <string name="text_search">Search: </string>
+    <string name="text_welcome">New in the app?\n\n Click the magnifying glass and start your search for tweets</string>
+    <string name="text_no_results">Unfortunately we did not find results for your search, but do not be discouraged, check the search terms and try again :)</string>
+</resources>

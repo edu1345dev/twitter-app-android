@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:twittersdk="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:titleTextColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_home_activity_nosearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:padding="16dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="@string/text_welcome"/>
+
+    <TextView
+        android:id="@+id/tv_home_activity_recent_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:visibility="gone"
+        android:text="@string/text_recent_search"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <View
+        android:id="@+id/view_home_activity_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e2dfdf"/>
+
+    <ListView
+        android:id="@+id/lv_home_activity_recent_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_search">Buscar Tweets</string>
+    <string name="text_confirmation">SIM</string>
+    <string name="text_delete_history">Deletar histórico?</string>
+    <string name="text_negation">NÃO</string>
+    <string name="text_recent_search">Buscas Recentes</string>
+    <string name="text_search">Busca: </string>
+    <string name="text_no_results">Infelizmente não encontramos resultados para sua busca, mas não desanime, verifique os termos da busca e tente novamente :)</string>
+    <string name="text_welcome">Novo no app?\n\n Clique na lupa e inicie suas buscas por tweets</string>
+</resources>
