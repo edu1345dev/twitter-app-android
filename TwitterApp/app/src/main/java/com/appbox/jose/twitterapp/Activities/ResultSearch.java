@@ -67,9 +67,7 @@ public class ResultSearch extends AppCompatActivity implements SearchView.OnQuer
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search your data somehow
             setToolbarTitle(query);
-            Log.d("searchActivity",query);
             mQuery = query;
             searchTweets(query);
         }
@@ -99,8 +97,6 @@ public class ResultSearch extends AppCompatActivity implements SearchView.OnQuer
                         for (Tweet tweet : result.data.items) {
                             boolean adicionar = true;
 
-
-
                             Tweeto tweeto = new Tweeto(tweet.user.name,tweet.text,
                                     tweet.user.profileImageUrlHttps,tweet.id);
 
@@ -115,7 +111,6 @@ public class ResultSearch extends AppCompatActivity implements SearchView.OnQuer
                             if (adicionar){
                                 listTweeto.add(tweeto);
                             }
-                            Log.d("tweet","id: "+tweet.id+" nome: "+tweet.user.name);
                         }
 
                         if (listTweeto.size() > lastListSize){
@@ -127,20 +122,14 @@ public class ResultSearch extends AppCompatActivity implements SearchView.OnQuer
                         if (listTweeto.size() == 0){
                             showNoResultView();
                         }
-                        Log.d("tweet",""+result.data.items.size());
                     }
                 }
 
                 @Override
                 public void failure(TwitterException exception) {
-                    Log.d("tweet","Failure"+exception.getMessage());
                     loadingTweets = false;
                 }
             });
-
-//        final TweetTimelineListAdapter timelineAdapter = new TweetTimelineListAdapter(this, searchTimeline);
-//        tweetList.setAdapter(timelineAdapter);
-
         }
 
     private void showNoResultView() {
@@ -169,9 +158,7 @@ public class ResultSearch extends AppCompatActivity implements SearchView.OnQuer
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-               // Log.d("onScroll","first "+firstVisibleItem+" visibleCOunt "+visibleItemCount+" total "+totalItemCount);
                 if (firstVisibleItem+visibleItemCount == totalItemCount){
-                  //  Log.d("onScroll","lastItem");
                     if (!loadingTweets){
                         searchTweets(mQuery);
                         loadingTweets = true;

@@ -59,7 +59,6 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
     protected SearchTermAdapter searchTermAdapter;
     protected View viewDivisor;
 
-    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "YFUEvPZyQU6S0YmUPVVUQ8xrV";
     private static final String TWITTER_SECRET = "JqQA94wkZjapqBKa4Z9YNKAgC2L4Cw3ppeu10AuIESfNznb6TE";
 
@@ -83,8 +82,6 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
 
         Log.d("populate",recentSearch.toString());
         searchTermAdapter = new SearchTermAdapter(this,recentSearch,this);
-//        ArrayAdapter<String> itemsAdapter =
-//                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,recentSearch);
         lvRecentSearch.setAdapter(searchTermAdapter);
 
     }
@@ -157,7 +154,6 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
         menuItem = menu.findItem(R.id.home_action_search);
@@ -168,7 +164,6 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
             searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         }
 
-        //codigo para mudar a cor do texto hint da searchView
         SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
         searchAutoComplete.setHintTextColor(Color.WHITE);
         searchAutoComplete.setTextColor(Color.WHITE);
@@ -194,22 +189,16 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        Log.d("onQuerySubmit",query);
 
         Gson gson = new Gson();
         String string = preferences.getString(getResources().getString(R.string.recent_search),"");
         RecentSearch recentSearch = gson.fromJson(string,RecentSearch.class);
 
         List<String> list = recentSearch.getSearchList();
-        Log.d("onQuerySubmit",list.toString());
 
         if (list.size() == 0){
             list.add(query);
         }else list.add(0,query);
-
-
-        Log.d("onQuerySubmit",list.toString());
-        Log.d("onQuerySubmit",recentSearch.getGson());
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(getResources().getString(R.string.recent_search),recentSearch.getGson());
@@ -225,7 +214,6 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
     public RecentSearch getRecentSearch(){
         Gson gson = new Gson();
         String string = preferences.getString(getResources().getString(R.string.recent_search),"");
-        Log.d("getRecent",string);
         RecentSearch recentSearch = gson.fromJson(string,RecentSearch.class);
         return recentSearch;
     }

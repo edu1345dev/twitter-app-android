@@ -32,18 +32,12 @@ public class SearchTermAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
         final String search = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.search_item_view, parent, false);
         }
-        // Lookup view for data population
         TextView tvSearch = (TextView) convertView.findViewById(R.id.tv_item_search);
-        // Populate the data into the template view using the data object
         tvSearch.setText(search);
-
-
         convertView.setClickable(true);
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
