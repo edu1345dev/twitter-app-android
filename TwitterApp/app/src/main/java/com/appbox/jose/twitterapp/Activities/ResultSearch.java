@@ -81,7 +81,7 @@ public class ResultSearch extends AppCompatActivity implements SearchView.OnQuer
         }
 
             SearchTimeline searchTimeline = new SearchTimeline.Builder()
-                    .maxItemsPerRequest(30)
+                    .maxItemsPerRequest(20)
                     .resultType(SearchTimeline.ResultType.MIXED)
                     .query(query)
                     .build();
